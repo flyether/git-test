@@ -283,7 +283,7 @@ transition: 0.2s;
   background-position: center 0px;
   background-repeat: no-repeat;
   height: 910px;
-  padding: 160px 0 0px 80px;
+  padding: 250px 0 0px 80px;
   }
 .section {
   display:flex;
@@ -462,6 +462,7 @@ line-height: 50px;
 
 @media (max-width: 768px) {
   body {
+    position: relative;
     max-width: 100%;
     flex-direction:column;
     display: flex;
