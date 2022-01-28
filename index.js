@@ -20,7 +20,7 @@ const portfolioBtnsContainer = document.querySelector('.section-button');
 portfolioBtn.forEach(b=>{
   b.addEventListener('click', event => {
   portfolioImages.forEach((img, index) => {
-    img.src = `./assets/img/${event.target.data-season}/${index + 1}.jpg`})
+    img.src = `./assets/img/${event.target.dataset.season}/${index + 1}.jpg`})
   });
 });
  
