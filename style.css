@@ -559,7 +559,7 @@ input::placeholder {
     }
   .section-price {
     display: block;
-    margin: 0 0px 0 17%;
+   
   }
   .skills-items{
     
@@ -758,7 +758,8 @@ input::placeholder {
 
 .price-items {
   max-width:calc(100% - 40px);
-  margin: 20px 0px 20px 40px;
+  margin: 20px;
+  height: auto;
 }
 .input-email{
   height: 50px;

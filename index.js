@@ -12,21 +12,17 @@ if(hamburgerUp){
 // начнем 3 часть.
 // кнопки
 
-const portfolioBtn = document.querySelector('.button-transparent');
+const portfolioBtn = document.querySelectorAll('.button-transparent');
 const portfolioImages = document.querySelectorAll('.portfolio-image');
 const portfolioBtnsContainer = document.querySelector('.section-button');
 
-   function changeImage() {
-    portfolioBtn.addEventListener('click', event => {
-    if(event.target.classList.contains('button-transparent')) {
- 
+  
+portfolioBtn.forEach(b=>{
+  b.addEventListener('click', event => {
   portfolioImages.forEach((img, index) => {
-    img.src = `./assets/img/${event.target.data.season}/${index + 1}.jpg`})
-};
-  })
-
- };
-
+    img.src = `./assets/img/${event.target.data-season}/${index + 1}.jpg`})
+  });
+});
  
 
   // portfolioBtn.addEventListener('click', () => {
