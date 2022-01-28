@@ -577,9 +577,9 @@ input::placeholder {
   background-image: url('./assets/img/small-contacts.jpg');
   background-position: center center;
   height: 590px;
-  margin-top: 12px; 
+  margin-top: 5%px; 
   align-items: center;
-  padding-top: 0px 0px;
+ 
 }
 .header-container {
   
