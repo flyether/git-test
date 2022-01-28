@@ -162,12 +162,10 @@ transition: 0.2s;
   right: 56%;
   top: 275px;
   padding: 10px 60px;
-  
-  transition: 0.25s;
+   transition: 0.25s;
   cursor: pointer;
 }
-.button-transparent-click{
-  border: solid 3px var(--color-gold);
+.button-transparent-active{
   background: var(--color-gold);
   color: #000;
   font-family: inherit;
@@ -178,8 +176,7 @@ transition: 0.2s;
   right: 56%;
   top: 275px;
   padding: 10px 60px;
-  margin: 50px 0px;
-  transition: 0.25s;
+    transition: 0.25s;
   cursor: pointer;
 }
 .button-transparent:hover {
@@ -686,8 +683,9 @@ input::placeholder {
     overflow-x: hidden;
     display: none;
     top: 0px;
+  
     background: black;
-    width: 620px; 
+    width: 60%; 
     height: 1024px;
     z-index: 3;
     transition: all 0.3s ease 0s;

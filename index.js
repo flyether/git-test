@@ -23,13 +23,38 @@ portfolioBtn.forEach(b=>{
     img.src = `./assets/img/${event.target.dataset.season}/${index + 1}.jpg`})
   });
 });
- 
 
-  // portfolioBtn.addEventListener('click', () => {
-  //   portfolioImages.forEach((img, index) => img.src = `./assets/img/winter/${index + 1}.jpg`);
-   
-  //  });
-   
+
+// portfolioBtn.forEach(e=>{
+//   e.addEventListener('click', () =>{
+//    e.classList.toggle('button-transparent-active')
+//     // e.classList.add('button-transparent-active');
+//     })
+// })
+portfolioBtn.forEach(e=>{
+  e.addEventListener('click', () =>{
+	portfolioBtn.forEach((evt)=> { evt.classList.remove('button-transparent-active');});
+    e.classList.add('button-transparent-active');
+    })
+})
+
+// portfolioBtn.forEach(e=>{
+//   e.addEventListener('click', (ev) =>{
+// 	portfolioBtn.forEach((evt)=> { evt.classList.remove('button-transparent-active');});
+//     ev.classList.add('button-transparent-active');
+//     })
+// })
+
+
+
+//  portfolioBtn.forEach(e=>{
+//   e.addEventListener('mouseleave', () =>{
+//      e.classList.toggle('button-transparent')
+//     })
+//  })
+
+
+
    
 
   function preloadSummerImagesAll(folderName) {
