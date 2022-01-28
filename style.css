@@ -47,7 +47,9 @@ a{
  img { 
    max-width:100%;
   }
-
+.box {
+  display:none;
+}
 .h1-text {
   color: #ffffff;
   font-family: Merriweather;
@@ -653,7 +655,10 @@ input::placeholder {
       #hamburger-1.is-active .line:nth-child(2){
     opacity: 0;
   }
-  
+  .box {
+    display:block;
+    flex-basis:100%;
+  }
   #hamburger-1.is-active .line:nth-child(1){
     -webkit-transform: translateY(13px) rotate(45deg);
     -ms-transform: translateY(13px) rotate(45deg);
