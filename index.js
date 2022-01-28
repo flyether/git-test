@@ -16,21 +16,23 @@ const portfolioBtn = document.querySelector('.button-transparent');
 const portfolioImages = document.querySelectorAll('.portfolio-image');
 const portfolioBtnsContainer = document.querySelector('.section-button');
 
-   function changeImage(event) {
+   function changeImage() {
+    portfolioBtn.addEventListener('click', event => {
     if(event.target.classList.contains('button-transparent')) {
- let a  = dataset.season;
- portfolioBtn.addEventListener('click', () => {
-  portfolioImages.forEach((img, index) => img.src = `./assets/img/winter/${index + 1}.jpg`);
  
- });
+  portfolioImages.forEach((img, index) => {
+    img.src = `./assets/img/${event.target.data.season}/${index + 1}.jpg`})
+};
+  })
 
-    }
-  };
+ };
 
-  portfolioBtn.addEventListener('click', () => {
-    portfolioImages.forEach((img, index) => img.src = `./assets/img/winter/${index + 1}.jpg`);
+ 
+
+  // portfolioBtn.addEventListener('click', () => {
+  //   portfolioImages.forEach((img, index) => img.src = `./assets/img/winter/${index + 1}.jpg`);
    
-   });
+  //  });
    
    
 
