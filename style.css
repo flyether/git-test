@@ -307,7 +307,7 @@ transition: 0.2s;
 }
 .section-items {
   display:flex;
-  Margin: 60px auto 0px auto;
+  
   }
 
 .section-wrapper {
@@ -384,7 +384,7 @@ transition: 0.2s;
   padding: 0px 235px 20px 0;  
 }
 .input-email{
-  display:flex;
+  
   height: 60px;
   width: 450px;
   border: solid 2px var(--color-gold);
@@ -392,7 +392,7 @@ transition: 0.2s;
   margin: 0px 10px 20px 0;
 }
 .input-tel{
-  display:flex;
+  
   height: 60px;
   width: 450px;
   border: solid 2px var(--color-gold);
@@ -400,7 +400,7 @@ transition: 0.2s;
   margin: 0px 10px 20px 0;
 }
 .input-text{
-  display:flex;
+
   height: 100px;
   width: 450px;
   color: var(--color-gold);
@@ -415,8 +415,7 @@ transition: 0.2s;
   
 }
 .send-message{
-  display:flex;
- 
+  
   margin: 0px 240px 0px 0; 
 }
 textarea::placeholder {
@@ -545,6 +544,7 @@ input::placeholder {
   }
  .container {
    max-width: 100%;
+   justify-content:center; 
      }
   .section{
   flex-flow:wrap ;
@@ -553,21 +553,25 @@ input::placeholder {
   }
   .section-items {
     flex-wrap: wrap;
+    margin: 0% 0 2%  15%;
     }
   .section-price {
     display: block;
+    margin: 0 0px 0 17%;
   }
   .skills-items{
     
     width: 40%;
-    
+    margin-top: 15%;
    
   }
   .section-button{
   flex-flow:wrap;
-  max-width: 100%;
-  }
 
+  }
+  .text-bold {
+   margin: 20px 0px 10px;
+  }
 .contacts-container {
   max-width: 100%;
   background-image: url('./assets/img/small-contacts.jpg');
@@ -748,20 +752,18 @@ input::placeholder {
 }
 
 .price-items {
-  max-width:calc(100%-40px)ж
+  max-width:calc(100%-40px);
 }
 .input-email{
   height: 50px;
   
 }
 .input-tel{
-  display:flex;
+  max-width:calc(100%-40px);
   height: 50px;
- 
-}
+ }
 .section-title-contact {
- 
-  padding: 50px 25px 40px 0;  
+   padding: 50px 25px 40px 0;  
 }
 .send-message{
  margin: 5px 245px 0px 235px; 
