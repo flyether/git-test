@@ -199,9 +199,8 @@ transition: 0.2s;
   width: 50px;
   height: 50px;
   fill: #ffffff;
-  position: relative;
   z-index: 5;
-  margin: 0px 0px 0px 130px;
+  margin: 0px 0px 0px 20px;
   transition: 0.25s;
 }
 .header__logo:hover{
@@ -230,7 +229,7 @@ transition: 0.2s;
 
 .header-container {
   position: absolute;
-  Width : 100%;
+  Width :1440px;
   display:flex;
   justify-content: space-between;
   align-items: center;
@@ -244,11 +243,12 @@ transition: 0.2s;
 .nav-list{
   display: flex;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items:flex-end;
   list-style: none;
-  padding: 0 30px;
-  margin: 10px 0px 0px 70px;
+
 }
+
+
 .nav-list-footer{
   display: flex;
   flex-wrap: nowrap;
@@ -275,7 +275,7 @@ transition: 0.2s;
   background-color: black;
   width: 1440px; /*Temporarily replace max-width: 1440px*/
   margin: 0 auto;  
-  padding: 0 20px;
+  
 }
 .hero-container {
   
@@ -288,7 +288,7 @@ transition: 0.2s;
 .section {
   display:flex;
   justify-content:center;
-  padding-bottom: 70px;
+  margin-top: 90px;
 }
 .section-wrapper {
   width: 50%;
@@ -426,21 +426,16 @@ input::placeholder {
   padding: 10px ; 
   margin: auto ;
 }
-
 .header-language {
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-justify-content: flex-end;
-margin: 20px 0px 0px 55px;
- font-family: Inter;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-line-height: 50px;
+      -ms-flex-pack: end;
+          justify-content: flex-end;       
 }
+
+
 
 .header-language__item {
   color: #fff;
@@ -538,7 +533,7 @@ line-height: 50px;
     line-height: 1.2;
   } 
   .header-container{
-    max-width: calc(100%);
+    max-width: 100%;
   }
   .video-player {       
    margin: 0 0 0 0px;
@@ -550,9 +545,7 @@ line-height: 50px;
   .button {
     margin-top: 60px;
   }
-  .header__logo{
-    margin: 19px 318px 20px 0px;
-   }
+
   .hamburger{
     display: block;
     position: relative; /* нов */
@@ -696,10 +689,6 @@ line-height: 50px;
 .send-message{
  margin: 5px 245px 0px 235px; 
 }
-.header-language {
-   justify-content: center;
-  margin: 20px 0px 0px 85px;
-  padding: 0px 0px 20px 0px;
-  }
+
 
 }
