@@ -44,6 +44,9 @@ a{
   a:hover { 
     color: var(--color-gold);
  } 
+ img { 
+   max-width:100%;
+  }
 
 .h1-text {
   color: #ffffff;
@@ -280,7 +283,7 @@ transition: 0.2s;
 .hero-container {
   
   background-image: url('./assets/img/header-bg.jpg');
-  background-position: center 0px;
+  background-position: center center;
   background-repeat: no-repeat;
   height: 910px;
   padding: 250px 0 0px 80px;
@@ -568,6 +571,7 @@ input::placeholder {
 .contacts-container {
   max-width: 100%;
   background-image: url('./assets/img/small-contacts.jpg');
+  background-position: center center;
   height: 590px;
   margin-top: 12px; 
   align-items: center;
@@ -744,10 +748,7 @@ input::placeholder {
 }
 
 .price-items {
-  height: 505px;
-  width: 420px;
-  padding: 40px 70px 0px 70px;
-  margin: 20px 0px 20px 40px;
+  max-width:calc(100%-40px)ж
 }
 .input-email{
   height: 50px;

@@ -26,7 +26,7 @@ const portfolioBtnsContainer = document.querySelector('.section-button');
 
     }
   };
-// ${a } в шаблонную строку
+
   portfolioBtn.addEventListener('click', () => {
     portfolioImages.forEach((img, index) => img.src = `./assets/img/winter/${index + 1}.jpg`);
    
