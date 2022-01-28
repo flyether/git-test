@@ -80,7 +80,7 @@ a{
   font-weight: bold;
   font-size: 20px;
   line-height: 40px;
-  
+  margin: 50px 0px 0px 50px;
 }
 .prise-text-mer {
 color: #ffffff;
@@ -193,8 +193,7 @@ transition: 0.2s;
   width: 62px;
   height: 50px;
   fill: var(--color-gold);
-  display: block;
-  margin: auto; 
+  
 }
 .header__logo{
   width: 50px;
@@ -293,8 +292,8 @@ transition: 0.2s;
 }
 .section-items {
   display:flex;
-  margin: 60px 30px 0px 40px;
- 
+  Margin: 60px auto 0 auto;
+
   
   }
 
@@ -316,7 +315,9 @@ transition: 0.2s;
   padding:0 20px;
 }
 .skills-items {
-  
+  display: flex;
+    align-items: center;
+    flex-direction: column;
   
 
 }
