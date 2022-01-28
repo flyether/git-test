@@ -366,9 +366,9 @@ transition: 0.2s;
   background-image: url('./assets/img/contacts.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  padding-top: 15px 20px;
+  margin: 100px 10px 0px 0px;
   height: 700px;
-  background-color: black;
+ 
 }
 .section-title-contact {
   display:flex;
@@ -378,7 +378,7 @@ transition: 0.2s;
   font-size: 40px;
   line-height: 80px;
   color: var(--color-gold); 
-  padding: 50px 235px 40px 0;  
+  padding: 0px 235px 20px 0;  
 }
 .input-email{
   display:flex;
@@ -542,8 +542,7 @@ input::placeholder {
   }
  .container {
    max-width: 100%;
-  
-   }
+     }
   .section{
   flex-flow:wrap ;
   max-width: calc(100% - 40px);
