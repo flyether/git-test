@@ -291,6 +291,14 @@ transition: 0.2s;
   margin-top: 100px;
 }
 
+.section-price{
+  display:flex;
+  justify-content:center;
+  margin-top: 60px;
+}
+#price .section {
+  margin-top:90px;
+}
 #portfolio .section {
   margin-top:110px;
 }
@@ -346,8 +354,10 @@ transition: 0.2s;
   background-position: center top;
   border:solid 2px var(--color-gold);
   text-align: center;
+  width:450px ;
+  height: 505px;
   padding: 50px 100px 40px;
-  margin:0 10px;
+  margin:0 20px 0 20px;
 }
 .contacts-container {
   display:flex;
@@ -461,6 +471,66 @@ input::placeholder {
 .header-language .active {
   color: #bdae82;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
   body {
