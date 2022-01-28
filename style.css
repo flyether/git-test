@@ -752,14 +752,15 @@ input::placeholder {
 }
 
 .price-items {
-  max-width:calc(100%-40px);
+  max-width:calc(100% - 40px);
+  margin: 20px 0px 20px 40px;
 }
 .input-email{
   height: 50px;
   
 }
 .input-tel{
-  max-width:calc(100%-40px);
+  max-width:calc(100% - 40px);
   height: 50px;
  }
 .section-title-contact {
