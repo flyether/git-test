@@ -291,7 +291,7 @@ transition: 0.2s;
 }
 .section-items {
   display:flex;
-  justify-content:space-between;
+  
   }
 
 .section-wrapper {
@@ -312,9 +312,9 @@ transition: 0.2s;
   padding:0 20px;
 }
 .skills-items {
-  display: flex;
-  flex-direction:column;
- margin-top: 4%;
+  
+  
+
 }
 .section-button {
   display:flex;
@@ -473,8 +473,7 @@ input::placeholder {
   padding-bottom: 50px;
   }
   .skills-items{
-    padding: 0px 0px 80px 15px ;
-    margin: 0px 20px 0px 40px;
+    
     width: 40%;
     height: 250px;
    
