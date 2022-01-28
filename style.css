@@ -80,7 +80,6 @@ a{
   font-weight: bold;
   font-size: 20px;
   line-height: 40px;
-  margin: 50px 0px 0px 50px;
 }
 .prise-text-mer {
 color: #ffffff;
@@ -157,7 +156,7 @@ transition: 0.2s;
   right: 56%;
   top: 275px;
   padding: 10px 60px;
-  margin: 50px 0px;
+  margin: 50px 0 20px 0px;
   transition: 0.25s;
   cursor: pointer;
 }
@@ -292,7 +291,7 @@ transition: 0.2s;
 }
 .section-items {
   display:flex;
-  Margin: 60px auto 0 auto;
+  Margin: 60px auto 0px auto;
 
   
   }
@@ -318,14 +317,13 @@ transition: 0.2s;
   display: flex;
     align-items: center;
     flex-direction: column;
-  
-
+    width: 25%;
+    padding:0 20px;
 }
 .section-button {
   display:flex;
   justify-content:center;
-  padding-bottom: 50px;
-  gap: 5px;
+   gap: 5px;
 }
 .section-img {
   display:flex;  
