@@ -532,7 +532,7 @@ input::placeholder {
 
 
 
-@media (max-width: 100%) {
+@media (max-width: 768px) {
   body {
     position: relative;
     max-width: 100%;
