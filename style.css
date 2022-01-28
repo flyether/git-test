@@ -532,7 +532,7 @@ input::placeholder {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 100%) {
   body {
     position: relative;
     max-width: 100%;
@@ -553,7 +553,7 @@ input::placeholder {
   }
   .skills-items{
     
-    width: 50%;
+    width: 40%;
     height: 250px;
    
   }
@@ -716,8 +716,8 @@ input::placeholder {
   }
   .text-simple {
     line-height: 18px;
-    padding: 0px 0px 0px 0px;
-    width: 280px;
+    
+   
   }
   .button-transparent {
     right: 56%;
