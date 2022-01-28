@@ -24,6 +24,7 @@
  }
  body {
   justify-content: space-between;
+  position: relative;
   width: 1440px;
   min-height: 100vh; 
   margin: auto;
