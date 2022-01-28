@@ -200,7 +200,7 @@ transition: 0.2s;
   height: 50px;
   fill: #ffffff;
   z-index: 5;
-  margin: 0px 0px 0px 20px;
+  margin-right: 55%;
   transition: 0.25s;
 }
 .header__logo:hover{
@@ -548,10 +548,12 @@ input::placeholder {
   max-width: calc(100% - 40px);
   padding-bottom: 50px;
   }
- 
+  .section-price {
+    display: block;
+  }
   .skills-items{
     
-    width: 40%;
+    width: 50%;
     height: 250px;
    
   }
