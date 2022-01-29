@@ -26,16 +26,24 @@
 background: #fff;
 color: #000;
  }
-.body{
+ html.light .nav-link, html.light  .text-footer{
+  color: #fff;
+ }
+ html.light .section-title {
+  background: #fff;
+}
+html.light .section-wrapper {
+  width: 50%;
+  background-image: linear-gradient(to top, #fff 39px, #000 39px, #000 42px, #fff 41px);
+  }
 
-}
-.light-theme{
-  background-color: #fff;
+ html.light .text-bold, html.light .section-title , html.light .button-transparent, html.light .header-language, html.light .button-transparent:hover, html.light .button-gold:hover, html.light .button:hover, html.light .prise-text-mer, html.light .text-simple,  html.light a {
   color: #000;
-}
-.light-theme:hover {
-  color: #000;
-}
+  }
+   html.light, html.light, html.light, html.light, html.light, html.light   {
+   fill: #000;
+  }
+
 
  body {
   justify-content: space-between;
@@ -226,7 +234,7 @@ transition: 0.2s;
   height: 50px;
   fill: #ffffff;
   z-index: 5;
-  margin-right: 55%;
+  margin-right: auto;
   transition: 0.25s;
 }
 .header__logo:hover{
@@ -306,9 +314,10 @@ transition: 0.2s;
   padding: 0 20px;
   line-height: 50px;
   transition: .3s;
+ 
 }
 .container {
-  background-color: black;
+  
   width: 1440px; /*Temporarily replace max-width: 1440px*/
   margin: 0 auto;  
   
@@ -345,7 +354,7 @@ transition: 0.2s;
 
 .section-wrapper {
   width: 50%;
-  background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
+  background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 42px, #000 41px);
   }
 .section-title {
   display:flex;
@@ -405,7 +414,7 @@ transition: 0.2s;
   background-repeat: no-repeat;
   margin: 100px 10px 0px 0px;
   height: 700px;
- 
+  background-color: #000;
 }
 .section-title-contact {
   display:flex;
@@ -465,9 +474,10 @@ input::placeholder {
   display:flex;
   justify-content:center;
   padding: 20px 0px;
+  background-color: #000;
+  
 }
 .text-footer {
-  
   color: #ffffff;
   font-family: Inter;
   font-style: normal;
@@ -807,6 +817,11 @@ input::placeholder {
 .send-message{
  margin: 5px 245px 0px 235px; 
 }
-
-
+html.light .nav-link{
+  color:   black;
+ }
+ html.light .nav{
+  background: white;
+ }
 }
+

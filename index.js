@@ -141,23 +141,31 @@ enLanguage.addEventListener('click', ()=>getTranslate("en"))
 
 // смена темы
 
-const elementsForChengeTheme = ['body', 'section-title', 'container ']
-const lightButton = document.querySelector('.sun')
+// const elementsForChengeTheme = ['.body', '.section-title', '.container ']
+// const lightButton = document.querySelector('.sun')
 
-function ChengeTheme() {
- 
 
-    elementsForChengeTheme.forEach((elem)=> { elem.classList.remove('.light-theme');});
-    e.classList.add('button-transparent-active');
-};
 
-lightButton.addEventListener('click', () => {})
+  
+//  lightButton.addEventListener('click', () => {elementsForChengeTheme.forEach((elem)=> { elem.classList.toggle('light-theme')})})
+
+
+//  elementsForChengeTheme.forEach(e=>{
+//   lightButton.addEventListener('click', () => {elementsForChengeTheme.forEach((elem)=> { elem.classList.toggle('light-theme')})})
+// })
 
 
 
 }; 
 
 console.log('Все требования выполнены,  немного сбиты пиксели, 70 баллов'); 
+const elementsForChengeTheme = ['.text-bold ', '.section-title', '.container ']
+
+$(document).ready(function(){
+  $(".sun").click(function(){
+    $('HTML').toggleClass("light");
+  });
+});
 
 // код крестика с сайта с тз
 $(document).ready(function(){
