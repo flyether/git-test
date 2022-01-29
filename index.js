@@ -139,6 +139,19 @@ translate.forEach(ele=> {ele.textContent = i18Obj[lang][ele.dataset.i18]
 ruLanguage.addEventListener('click', ()=>getTranslate("ru"))
 enLanguage.addEventListener('click', ()=>getTranslate("en"))
 
+// смена темы
+
+const elementsForChengeTheme = ['body', 'section-title', 'container ']
+const lightButton = document.querySelector('.sun')
+
+function ChengeTheme() {
+ 
+
+    elementsForChengeTheme.forEach((elem)=> { elem.classList.remove('.light-theme');});
+    e.classList.add('button-transparent-active');
+};
+
+lightButton.addEventListener('click', () => {})
 
 
 

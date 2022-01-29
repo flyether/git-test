@@ -22,6 +22,21 @@
  html {
    scroll-behavior: smooth; 
  }
+ Html.light body{
+background: #fff;
+color: #000;
+ }
+.body{
+
+}
+.light-theme{
+  background-color: #fff;
+  color: #000;
+}
+.light-theme:hover {
+  color: #000;
+}
+
  body {
   justify-content: space-between;
   position: relative;
@@ -48,7 +63,6 @@ a{
    max-width:100%;
   }
 
-
   .ru-language{
 
   }
@@ -56,8 +70,6 @@ a{
   .en-language{
 
   }
-
-
 
 .box {
   display:none;
@@ -220,6 +232,16 @@ transition: 0.2s;
 .header__logo:hover{
  fill:var(--color-gold);
 }
+.sun{
+  width: 45px;
+  height: 45px;
+  fill: #ffffff;
+  transition: 0.25s;
+  margin: 0 15px;
+}
+.sun:hover{
+  fill:var(--color-gold);
+}
 .icon-social{
   width: 32px;
   height: 32px;
@@ -344,6 +366,7 @@ transition: 0.2s;
     flex-direction: column;
     width: 25%;
     padding:0 20px;
+    margin-top: 60px;
 }
 .section-button {
   display:flex;
@@ -395,7 +418,6 @@ transition: 0.2s;
   padding: 0px 235px 20px 0;  
 }
 .input-email{
-  
   height: 60px;
   width: 450px;
   border: solid 2px var(--color-gold);
