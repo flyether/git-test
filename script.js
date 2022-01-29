@@ -13,8 +13,8 @@ document.querySelectorAll('[data-i18]').forEach(el => {
 };
 
 languageSwitches.forEach((langSwitch) => {
-
-}
+   langSwitch.addEventListener('click', getTranslate, false)
+})
 
 // import i18Obj from `./translate` ; 
 // const ruLanguage = document.querySelector('.ru-language')
