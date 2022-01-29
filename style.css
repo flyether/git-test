@@ -400,8 +400,8 @@ transition: 0.2s;
   background-position: center top;
   border:solid 2px var(--color-gold);
   text-align: center;
-  width:450px ;
-  height: 505px;
+  align-items:stretch;
+  
   padding: 50px 100px 40px;
   margin:0 20px 0 20px;
 }

@@ -39,7 +39,7 @@ portfolioBtn.forEach(e=>{
     }
   }
   const seasons = ['winter', 'spring', 'summer', 'autumn'];
-  seasons.forEach( el => preloadSummerImagesAll(el))
+  seasons.forEach( elem => preloadSummerImagesAll(elem))
 
 
 // преключение языка
@@ -131,6 +131,7 @@ const ruLanguage = document.querySelector('.ru-language')
 const enLanguage = document.querySelector('.en-language')
 
 function getTranslate(lang) {
+  localStorage.setItem('leng', 'ru')
    const translate = document.querySelectorAll('[data-i18]') 
 translate.forEach(ele=> {ele.textContent = i18Obj[lang][ele.dataset.i18] 
 })
@@ -139,20 +140,30 @@ translate.forEach(ele=> {ele.textContent = i18Obj[lang][ele.dataset.i18]
 ruLanguage.addEventListener('click', ()=>getTranslate("ru"))
 enLanguage.addEventListener('click', ()=>getTranslate("en"))
 
-// смена темы
 
-// const elementsForChengeTheme = ['.body', '.section-title', '.container ']
-// const lightButton = document.querySelector('.sun')
+//данные в local storage
+let lang = 'en';
+let theme = 'light';
+//let langStorage = localStorage.getItem('langStorage') ? localStorage.getItem('langStorage') : 'en';
 
+// function setLocalStorage() {
+//   localStorage.setItem('langStorage', langStorage);
+//   localStorage.setItem('themeStorage', themeStorage);
+// }
+// window.addEventListener('beforeunload', setLocalStorage);
 
+// function getLocalStorage() {
+//   if(localStorage.getItem('langStorage')) {
+//     const langStorage = localStorage.getItem('langStorage')
+//     getTranslate(langStorage);
+//   }
+//   else if(localStorage.getItem('themeStorage')) {
+//     const themeStorage = localStorage.getItem('themeStorage')
+//     switchTheme(themeStorage);
+//   }
+// }
+// window.addEventListener('load', getLocalStorage);
 
-  
-//  lightButton.addEventListener('click', () => {elementsForChengeTheme.forEach((elem)=> { elem.classList.toggle('light-theme')})})
-
-
-//  elementsForChengeTheme.forEach(e=>{
-//   lightButton.addEventListener('click', () => {elementsForChengeTheme.forEach((elem)=> { elem.classList.toggle('light-theme')})})
-// })
 
 
 
@@ -160,17 +171,28 @@ enLanguage.addEventListener('click', ()=>getTranslate("en"))
 
 console.log('Все требования выполнены,  немного сбиты пиксели, 70 баллов'); 
 const elementsForChengeTheme = ['.text-bold ', '.section-title', '.container ']
+// смена темы
+// $(document).ready(function(){
+//   $(".sun").click(function(){
+//     $('HTML').toggleClass("light");
+//   });
+// });
 
-$(document).ready(function(){
-  $(".sun").click(function(){
-    $('HTML').toggleClass("light");
-  });
-});
+
+
+
 
 // код крестика с сайта с тз
 $(document).ready(function(){
   $(".hamburger").click(function(){
     $(this).toggleClass("is-active");
+  });
+});
+
+$(document).ready(function(){
+  $(".sun").click(function(){
+    $('HTML').toggleClass("light")
+    localStorage.setItem('theme', 'light')
   });
 });
 
