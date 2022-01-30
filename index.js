@@ -142,27 +142,8 @@ enLanguage.addEventListener('click', ()=>getTranslate("en"))
 
 
 //данные в local storage
-let lang = 'en';
-let theme = 'light';
-//let langStorage = localStorage.getItem('langStorage') ? localStorage.getItem('langStorage') : 'en';
-
-// function setLocalStorage() {
-//   localStorage.setItem('langStorage', langStorage);
-//   localStorage.setItem('themeStorage', themeStorage);
-// }
-// window.addEventListener('beforeunload', setLocalStorage);
-
-// function getLocalStorage() {
-//   if(localStorage.getItem('langStorage')) {
-//     const langStorage = localStorage.getItem('langStorage')
-//     getTranslate(langStorage);
-//   }
-//   else if(localStorage.getItem('themeStorage')) {
-//     const themeStorage = localStorage.getItem('themeStorage')
-//     switchTheme(themeStorage);
-//   }
-// }
-// window.addEventListener('load', getLocalStorage);
+// let lang = 'en';
+// let theme = 'light';
 
 
 
