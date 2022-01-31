@@ -50,8 +50,20 @@ html.light .section-wrapper {
   html.light  .moon:hover{
     fill:var(--color-gold);
   }
-
-  
+  .moon{
+    width: 0px;
+    height: 0px;
+  }
+  .sun{
+    width: 45px;
+    height: 45px;
+    fill: #ffffff;
+    transition: 0.25s;
+    margin: 0 15px;
+  }
+  .sun:hover{
+    fill:var(--color-gold);
+  }
 
  html.light .text-bold, html.light .section-title , html.light .button-transparent, html.light .header-language, html.light .button-transparent:hover, html.light .button-gold:hover, html.light .button:hover, html.light .prise-text-mer, html.light .text-simple,  html.light a {
   color: #000;
@@ -257,16 +269,7 @@ transition: 0.2s;
  fill:var(--color-gold);
 }
 
-.sun{
-  width: 45px;
-  height: 45px;
-  fill: #ffffff;
-  transition: 0.25s;
-  margin: 0 15px;
-}
-.sun:hover{
-  fill:var(--color-gold);
-}
+
 .icon-social{
   width: 32px;
   height: 32px;
