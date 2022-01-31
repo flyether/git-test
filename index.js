@@ -169,16 +169,16 @@ $(document).ready(function(){
      $(this).addClass("active");
      $(".ru-language").removeClass("active")
   });
+
+  $(".moon").click(function(){
+    $('HTML').removeClass("light")
+    localStorage.setItem('Theme', 'dark')
+   })
   $(".sun").click(function(){
-    if ('lightTheme' == localStorage.getItem("Theme")){
-       $('HTML').removeClass("light")
-       localStorage.setItem('Theme', 'dark')
+    $('HTML').addClass("light")
+       localStorage.setItem('Theme', 'lightTheme')
       }
-else{
- $('HTML').addClass("light")
-   localStorage.setItem('Theme', 'lightTheme')
- }
-})
+)
   if ('lightTheme' == localStorage.getItem("Theme")){
     $('HTML').addClass("light")
    }

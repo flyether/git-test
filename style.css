@@ -37,6 +37,21 @@ html.light .section-wrapper {
   width: 50%;
   background-image: linear-gradient(to top, #fff 39px, #000 39px, #000 42px, #fff 41px);
   }
+  html.light .sun {
+    display:none;
+  }
+  html.light .moon{
+    width: 40px;
+    height: 40px;
+    fill: #ffffff;
+    transition: 0.25s;
+    margin: 0 20px;
+  }
+  html.light  .moon:hover{
+    fill:var(--color-gold);
+  }
+
+  
 
  html.light .text-bold, html.light .section-title , html.light .button-transparent, html.light .header-language, html.light .button-transparent:hover, html.light .button-gold:hover, html.light .button:hover, html.light .prise-text-mer, html.light .text-simple,  html.light a {
   color: #000;
@@ -241,6 +256,7 @@ transition: 0.2s;
 .header__logo:hover{
  fill:var(--color-gold);
 }
+
 .sun{
   width: 45px;
   height: 45px;
