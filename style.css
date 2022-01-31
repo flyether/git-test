@@ -428,7 +428,6 @@ transition: 0.2s;
 .inputs-items{
   display:flex;
   flex-direction:column;
-  align-items: flex-end;
   margin: 30px 10px 0px 0px;
 }
 .input-email {
@@ -455,7 +454,7 @@ transition: 0.2s;
   font-size: 20px;
   border: solid 2px var(--color-gold);
   background-color: transparent;
-  margin: 20px 0 0;
+  margin: 20px 0 20px;
  }
 .send-message{
   margin: 20px 230px 0 0px;
@@ -757,25 +756,24 @@ input::placeholder {
 }
 .input-email{
   height: 50px;
-  
+  max-width:50%;
 }
 .input-tel{
-  max-width:calc(100% - 40px);
+  max-width:50%;
   height: 50px;
  }
-.section-title-contact {
-   padding: 50px 25px 40px 0;  
-}
-.send-message{
- margin: 5px 245px 0px 235px; 
-}
+ .input-text{
+  max-width:50%;
+ }
+
+
 html.light .nav-link{
   color:   black;
  }
  html.light .nav{
   background: white;
  }
-
+ 
 
 }
 
