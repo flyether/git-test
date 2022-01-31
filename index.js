@@ -43,8 +43,6 @@ portfolioBtn.forEach(e=>{
 
 
 // преключение языка
-// type="module"
-// import i18Obj from './translate'
 
 const i18Obj = {
   'en': {
@@ -136,40 +134,56 @@ function getTranslate(lang) {
   localStorage.setItem('Leng', lang)
    const translate = document.querySelectorAll('[data-i18]') 
 translate.forEach(ele=> {ele.textContent = i18Obj[lang][ele.dataset.i18] 
-  
 })
-
 }
-
-ruLanguage.addEventListener('click', ()=>getTranslate("ru"))
-enLanguage.addEventListener('click', ()=>getTranslate("en"))
-
 let langStack = localStorage.getItem("Leng");
 if (langStack == "ru"){
   getTranslate("ru")
 }
+ruLanguage.addEventListener('click', ()=>getTranslate("ru"))
+enLanguage.addEventListener('click', ()=>getTranslate("en"))
+
+
+//данные в local storage
+// let lang = 'en';
+// let theme = 'light';
+
+
+
 
 }; 
 
-
 console.log('Все требования выполнены,  немного сбиты пиксели, 70 баллов'); 
+const elementsForChengeTheme = ['.text-bold ', '.section-title', '.container ']
+// смена темы
 
-// смена темы и запись в localStorage
-$(document).ready(function(){
-  $(".sun").click(function(){
-    $('HTML').toggleClass("light")
-    localStorage.setItem('theme', 'light')
-  });
-});
-
-
-
-
-
-// код крестика с сайта с тз
 $(document).ready(function(){
   $(".hamburger").click(function(){
     $(this).toggleClass("is-active");
   });
+  $(".ru-language").click(function(){
+    $(this).addClass("active");
+    $(".en-language").removeClass("active")
+  });
+  $(".en-language").click(function(){
+     $(this).addClass("active");
+     $(".ru-language").removeClass("active")
+  });
+  $(".sun").click(function(){
+    if ('lightTheme' == localStorage.getItem("Theme")){
+       $('HTML').removeClass("light")
+       localStorage.setItem('Theme', 'dark')
+      }
+else{
+ $('HTML').addClass("light")
+   localStorage.setItem('Theme', 'lightTheme')
+ }
+})
+  if ('lightTheme' == localStorage.getItem("Theme")){
+    $('HTML').addClass("light")
+   }
 });
+
+
+
 
