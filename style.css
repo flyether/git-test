@@ -41,6 +41,9 @@ html.light .section-wrapper {
     display:none;
   }
   html.light .moon{
+    display:block;
+  }
+  html.light .moon{
     width: 40px;
     height: 40px;
     fill: #ffffff;
@@ -51,15 +54,14 @@ html.light .section-wrapper {
     fill:var(--color-gold);
   }
   .moon{
-    width: 0px;
-    height: 0px;
+    display:none;
   }
   .sun{
     width: 45px;
     height: 45px;
     fill: #ffffff;
     transition: 0.25s;
-    margin: 0 15px;
+    margin: 0 20px;
   }
   .sun:hover{
     fill:var(--color-gold);
