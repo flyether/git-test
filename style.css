@@ -787,7 +787,11 @@ input::placeholder {
  .input-text{
   max-width:50%;
  }
-
+ .inputs-items{
+  
+  align-items: flex-center;
+  margin: auto;
+}
 
 html.light .nav-link{
   color:   black;
