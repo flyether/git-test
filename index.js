@@ -1,12 +1,19 @@
 
 const wifeBtn = document.querySelectorAll('.btn-three')
-const wifeImg = document.querySelector('.wife-img')
-let isPlay = false;
+
+
 
 wifeBtn.forEach(b=>{
-   b.addEventListener('click', event => {
-    wifeImg.src = `./assets/img/${event.target.dataset.wife}/1.jpg`})
+   b.addEventListener('click', () => {
+    document.querySelector('юaudio-player').cssText = `background-image:url("./assets/img/${b.dataset.wife}/1.jpg")`
+     
+    })
     });
+
+// wifeBtn.forEach(b=>{
+//   b.addEventListener('click', event => {
+//    wifeImg.url = `./assets/img/${event.target.dataset.wife}/1.jpg`})
+//    });
 
     wifeBtn.forEach(e=>{
       e.addEventListener('click', () =>{
