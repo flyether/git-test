@@ -5,7 +5,7 @@ const wifeBtn = document.querySelectorAll('.btn-three')
 
 wifeBtn.forEach(b=>{
    b.addEventListener('click', () => {
-    document.querySelector('юaudio-player').cssText = `background-image:url("./assets/img/${b.dataset.wife}/1.jpg")`
+    document.querySelector('audio-player').cssText = `background-image:url("./assets/img/${b.dataset.wife}/1.jpg")`
      
     })
     });
