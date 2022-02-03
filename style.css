@@ -27,104 +27,103 @@
         max-width:100%;
      }
       body {
+        display: block;
         background-color: rgb(231, 221, 221);
-      }
-     
-      .btn {
-        line-height: 50px;
-        height: 50px;
-        text-align: center;
-        width: 200px;
-        cursor: pointer;
-     }
-     .btn-three {
-        font-size: 20px;
         color: rgb(75, 19, 56);
-        font-weight: bold;
-        transition: all 0.3s;
-        position: relative;
-     }
-     .btn-three::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        background-color: rgba(133, 71, 96, 0.3);
-        transition: all 0.3s;
-     }
-     .btn-three:hover::before {
-        opacity: 0 ;
-        transform: scale(0.5,0.5);
-     }
-     .btn-three::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        opacity: 0;
-        transition: all 0.3s;
-        border: 1px solid rgba(161, 118, 131,);
-        transform: scale(1.2,1.2);
-     }
-     .button-transparent-active{
-        font-size: 20px;
-        color: white;
-        background-color: rgba(133, 71, 96, 0.8);
-        font-weight: bold;
-        transition: all 0.3s;
-        position: relative;
+        margin: auto;
+        max-width: 1440px;
+      }
 
-     }
-     .btn-three:hover::after {
-        opacity: 1;
-        transform: scale(1,1);
-     }
+.btn {
+   line-height: 50px;
+   height: 50px;
+   text-align: center;
+   width: 200px;
+   cursor: pointer;
+}
+.btn-three {
+   font-size: 20px;
+   color: rgb(75, 19, 56);
+   font-weight: bold;
+   transition: all 0.3s;
+   position: relative;
+}
+.btn-three::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+   background-color: rgba(133, 71, 96, 0.3);
+   transition: all 0.3s;
+}
+.btn-three:hover::before {
+   opacity: 0 ;
+   transform: scale(0.5,0.5);
+}
+.btn-three::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+   opacity: 0;
+   transition: all 0.3s;
+   border: 1px solid rgba(161, 118, 131,);
+   transform: scale(1.2,1.2);
+}
+.button-transparent-active{
+   font-size: 20px;
+   color: white;
+   background-color: rgba(133, 71, 96, 0.8);
+   font-weight: bold;
+   transition: all 0.3s;
+   position: relative;
+
+}
+.btn-three:hover::after {
+   opacity: 1;
+   transform: scale(1,1);
+}
      
 .audio-button {
-   position:absolute;
+   place-items: center;
    background: none;
    cursor: pointer;
    border: none;
    background-image: url(./assets/svg/play.svg);
-   height: 100px;
-   width: 140px;
+   background-repeat: no-repeat;
+   background-size:contain;
+   background-position: center center;
+   height: 20%;
+   width: 8%;
    transition: 0.25s;
 }
 .audio-button-active {
-   position:absolute;
-   background: none;
-   cursor: pointer;
-   border: none;
-   background-image: url(./assets/svg/pause.svg);
-   height: 100px;
-   width: 140px;
-   transition: 0.25s;
-}
+     background-image: url(./assets/svg/pause.svg);
+  }
 
 .audio-button:hover {
    filter: invert(10%) sepia(7%) saturate(350%) brightness(78%)
  contrast(90%);
 }
-     .container{
-
-     }
-     .section-button{
-       display: flex;
-
-      
-     }
+.container{
+ 
+ 
+    
+}
+.section-button{
+   display: flex;
+   flex-wrap: wrap;
+ 
+}
    
 .audio-player {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
   padding-top:56%;
   background:center center no-repeat;
   background-image:url("./assets/img/1.jpg");
@@ -147,12 +146,11 @@
 }
                
       .footer-container{
-         
+        
          display: flex;
          justify-content: space-between;
          align-items: center;
-         margin: 0 auto;
-         color:rgb(75, 19, 56);
+         margin: 25% auto auto auto ;
          font-size: 30px;
          font-weight: bold;
       }
@@ -162,5 +160,20 @@
 
 
       
-     
-    
+@media (max-width: 768px) {
+.footer-container{
+   font-size: 20px;
+}
+a {
+font-size: 20px;
+}
+.logo-rss{
+   width: 80px;
+   height: 40px;
+}
+.section-button{
+
+   justify-content: center;
+   align-items: center;
+}   
+}
