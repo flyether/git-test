@@ -85,26 +85,32 @@
         opacity: 1;
         transform: scale(1,1);
      }
-     .button-audio {
-        position:absolute;
-        background: none;
-        cursor: pointer;
-        border: none;
-        
-      }
+     
+.audio-button {
+   position:absolute;
+   background: none;
+   cursor: pointer;
+   border: none;
+   background-image: url(./assets/svg/play.svg);
+   height: 100px;
+   width: 140px;
+   transition: 0.25s;
+}
+.audio-button-active {
+   position:absolute;
+   background: none;
+   cursor: pointer;
+   border: none;
+   background-image: url(./assets/svg/pause.svg);
+   height: 100px;
+   width: 140px;
+   transition: 0.25s;
+}
 
-      
-      .audio-button {
-       background-image: url(./assets/svg/play.svg);
-        height: 120px;
-        width: 120px;
-        fill: #5c0d4b;
-        margin: auto;
-        transition: 0.25s;
-      }
-      .audio-button:hover {
-        fill:#bb70e7;
-      }
+.audio-button:hover {
+   filter: invert(10%) sepia(7%) saturate(350%) brightness(78%)
+ contrast(90%);
+}
      .container{
 
      }
