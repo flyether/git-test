@@ -36,17 +36,22 @@ html,body {
 body {  
    background-color: rgb(231, 221, 221);
    color: rgb(75, 19, 56);
-   max-width: 1440px;
+   
+   
+  
 }
 main {flex-grow:1;}
       
 .cont {
+  
    align-items:center;
    display:flex;
    flex-direction:column;
    min-height:100%;
 }
-
+.text-title{
+  text-align: center;
+}
 .btn {
    line-height: 50px;
    height: 50px;
@@ -116,7 +121,7 @@ main {flex-grow:1;}
    height: 20%;
    width: 8%;
    transition: 0.25s;
-   z-index: 2;
+   aspect-ratio: 138/108;
 }
 .audio-button-active {
      background-image: url(./assets/svg/pause.svg);
@@ -138,6 +143,8 @@ main {flex-grow:1;}
   display: grid;
   place-items: center;
   height: 900px ;
+  
+  max-width: 100%;
   background:center center no-repeat;
   background-image:url("./assets/img/1.jpg");
   background-size:cover;
@@ -157,15 +164,17 @@ main {flex-grow:1;}
  filter: invert(10%) sepia(7%) saturate(250%) brightness(100%)
  contrast(90%);
 }
-               
-      .footer-container{
-         width: 100%;
-         display: flex;
-         font-size: 30px;
-         font-weight: bold;
-      }
-
-
+footer{
+   width: 100%;   
+}
+   
+.footer-container{
+   margin: 0 4%;
+   display: flex;
+   justify-content: space-between;
+   font-size: 30px;
+   font-weight: bold;
+  }
 
 
 
@@ -174,6 +183,8 @@ main {flex-grow:1;}
 .footer-container{
    font-size: 20px;
 }
+
+   
 a {
 font-size: 20px;
 }
