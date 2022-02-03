@@ -26,13 +26,27 @@
      img { 
         max-width:100%;
      }
+     html,body {
+      height:100%;
+      padding:0;
+      margin:0;
+      
+    }
+     
       body {
-        display: block;
+        
         background-color: rgb(231, 221, 221);
         color: rgb(75, 19, 56);
-        margin: auto;
         max-width: 1440px;
       }
+      main {flex-grow:1;}
+      
+      .cont {
+         align-items:center;
+         display:flex;
+         flex-direction:column;
+         min-height:100%;
+       }
 
 .btn {
    line-height: 50px;
@@ -119,7 +133,8 @@
 .section-button{
    display: flex;
    flex-wrap: wrap;
- 
+   justify-content: space-between;
+  margin-bottom: 1%;
 }
    
 .audio-player {
@@ -146,11 +161,9 @@
 }
                
       .footer-container{
-        
+         width: 100%;
          display: flex;
-         justify-content: space-between;
-         align-items: center;
-         margin: 25% auto auto auto ;
+         
          font-size: 30px;
          font-weight: bold;
       }
