@@ -43,7 +43,8 @@ body {
 main {flex-grow:1;}
       
 .cont {
-  
+   max-width: 1440px;
+  margin: auto;
    align-items:center;
    display:flex;
    flex-direction:column;
