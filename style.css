@@ -52,6 +52,7 @@ main {flex-grow:1;}
 }
 .text-title{
   text-align: center;
+  font-family: 'Inter';
 }
 .btn {
    line-height: 50px;
