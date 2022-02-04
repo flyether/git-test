@@ -179,9 +179,6 @@ footer{
    font-size: 30px;
    font-weight: bold;
   }
-
-
-
       
 @media (max-width: 768px) {
 .footer-container{
@@ -190,7 +187,6 @@ footer{
 .audio-button {
    height: 45%;
    width: 25%;
-
 }
    
 a {

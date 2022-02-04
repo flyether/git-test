@@ -10,14 +10,16 @@ wifeBtn.forEach(b=>{
       b.classList.add('button-transparent-active')      
 
     wifeAudio.src = `./assets/sounds/${b.dataset.wife}/1.mp3`
+
+    wifeAudioBtn.classList.remove('audio-button-active')
+
     })
     })
   
-
     function wifePlay() {
       return wifeAudio.paused ? wifeAudio.play() : wifeAudio.pause()
     }
-    
+   
          
       
   wifeAudioBtn.addEventListener('click', () => {
