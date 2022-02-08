@@ -4,6 +4,8 @@
 }
 * {
    box-sizing: border-box;
+   padding:0;
+   margin:0;
 }
 :root {
  
@@ -34,8 +36,7 @@ img {
 html,body {
    width:100%;
    height:100%;
-   padding:0;
-   margin:0;
+  
 
 }
      
@@ -64,6 +65,7 @@ header{
 .text-title{
   text-align: start;
   font-family: 'Inter';
+  margin-top: 15px;
 }
 .strip{
    width: 100%;
@@ -82,7 +84,7 @@ header{
   fill: var(--hover-rose);
  }
  .search-box {
-   margin: 15px 5% 10px 20px;
+   margin: 10px 5% 10px 20px;
    width: 25%;
  }
  
@@ -95,10 +97,13 @@ header{
    border: 1px solid var(--green-stipe);
  }
 
- .img-search{
+ .img-search-API{
    width: 200px;
    height: 214px;
    cursor: pointer;
+   margin: 10px;
+   box-shadow: 5px 5px 10px var(--purple-grey);
+   border-radius: 10px;
  }
 
 .logo-rss{
