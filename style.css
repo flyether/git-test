@@ -21,7 +21,7 @@ html {
 }
 a{
    text-decoration:none;
-   color: var(--hover-rose);
+   color: var(--beige);
    font-size: 30px;
    font-weight: bold;
    font-family: 'Inter';
@@ -84,8 +84,9 @@ header{
   fill: var(--hover-rose);
  }
  .search-box {
-   margin: 10px 5% 10px 20px;
+   margin: 10px 5% 10px auto;
    width: 25%;
+
  }
  
  .search-box input {
@@ -105,7 +106,14 @@ header{
    box-shadow: 5px 5px 10px var(--purple-grey);
    border-radius: 10px;
  }
-
+ .img-card{
+   width: 200px;
+   height: 214px;
+   cursor: pointer;
+   margin: 10px;
+   box-shadow: 5px 5px 10px var(--purple-grey);
+   border-radius: 10px; 
+ }
 .logo-rss{
 width: 120px;
 height: 50px;
