@@ -1,41 +1,16 @@
-const wifeBtn = document.querySelectorAll('.btn-three')
-const wifeAudio = document.getElementById("audio")
-const wifeAudioBtn = document.querySelector('.audio-button')
 
-wifeBtn.forEach(b=>{
-   b.addEventListener('click', () => {
-    document.querySelector('.audio-player').style.cssText = `background-image:url("./assets/img/${b.dataset.wife}/1.jpg")`
-
-    wifeBtn.forEach((elem)=> { elem.classList.remove('button-transparent-active')})
-      b.classList.add('button-transparent-active')      
-
-    wifeAudio.src = `./assets/sounds/${b.dataset.wife}/1.mp3`
-
-    wifeAudioBtn.classList.remove('audio-button-active')
-
-    })
-    })
+  const url = 'https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo'
   
-    function wifePlay() {
-      return wifeAudio.paused ? wifeAudio.play() : wifeAudio.pause()
-    }
-   
-         
-      
-  wifeAudioBtn.addEventListener('click', () => {
-    wifeAudioBtn.classList.toggle('audio-button-active')
-   }
-  )
-     
+  async function getData() {
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data);
+  }
+  getData();
   
-      
-       
-        
-   
+  var block = document.getElementById('img-API');
+  function changeImg(){
+    block.style.backgroundImage = "url('https://cs7062.vk.me/c540107/v540107359/2729/fYQlS_23QdA.jpg')";
+}
 
-
-
- // wifeBtn.forEach(b=>{
-    //   b.addEventListener('click', event => {
-    //      wifeAudio.src = `./assets/sounds/${event.target.dataset.wife}/1.mp3`})
-    //    });
+changeImg();

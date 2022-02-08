@@ -60,7 +60,6 @@ main {
 header{
    width: 100%;
    display:flex;
-   
 }
 .text-title{
   text-align: start;
@@ -72,17 +71,35 @@ header{
    border: solid 2px var(--green-stipe);
    background-color: var(--green-stipe);
 }
-.header__logo{
+.header-logo{
    width: 50px;
    height: 50px;
    fill: var(--green-stipe);
    transition: 0.25s;
-   margin: 10px 10px 10px 20px;
+   margin: 10px 5% 10px 20px;
  }
- .header__logo:hover{
+ .header-logo:hover{
   fill: var(--hover-rose);
  }
+ .search-box {
+   margin: 15px 5% 10px 20px;
+   width: 25%;
+ }
  
+ .search-box input {
+   background-color: var(--green-stipe);
+   font-size: 1.5rem;
+   padding: 12px 12px;
+   border-radius: 10px;
+   transition: all 0.30s ease-in-out;
+   border: 1px solid var(--green-stipe);
+ }
+
+ .img-search{
+   width: 200px;
+   height: 214px;
+   cursor: pointer;
+ }
 
 .logo-rss{
 width: 120px;
