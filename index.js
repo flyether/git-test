@@ -1,30 +1,31 @@
-
-  const url = "https://api.unsplash.com/photos/random?query=spring&client_id=No7MKm_oO2eQLte1bRDe8U-iqpBeob1dCmwvyZyHCTs"
-  const image = document.querySelectorAll(".img-card")
+const url = "https://api.unsplash.com/photos/random?query=spring&client_id=No7MKm_oO2eQLte1bRDe8U-iqpBeob1dCmwvyZyHCTs"
   
+  var block = document.getElementById('img-API')
   async function getData() {
     try{
       const response = await fetch(url)
       const data = await response.json()
       console.log(data)
-      image.scr = data.urls.regular
-      block = data.urls.regular
+            
+      showData(data)
     } catch(error) {
       console.log(error)
     }       
   }
   getData()
 
-  // imgCard.addEventListener('click', () => {
-  //   getData()
-  //  }
-  // )
-
-
+  function showData(data){
+    block.style.backgroundImage = `url("${data.urls.regular}")`
+  }
   
-  var block = document.getElementById('img-API')
-  function changeImg(){
-    block.style.backgroundImage = "url('https://cs7062.vk.me/c540107/v540107359/2729/fYQlS_23QdA.jpg')";
-}
+  let div = document.createElement('div');
+ section.appendChild(div)
+  div.id ='img-API'
+  div.classList.add('img-search-API')
 
-changeImg();
+    
+  let html 
+  html += '<div id="img-API" class ="img-search-API">'
+  html +='</div>'
+  selector.innerHTML = html;
+  

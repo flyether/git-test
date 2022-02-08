@@ -99,21 +99,16 @@ header{
  }
 
  .img-search-API{
-   width: 200px;
+   background-size: cover;
+   width: 380px;
    height: 214px;
    cursor: pointer;
    margin: 10px;
    box-shadow: 5px 5px 10px var(--purple-grey);
    border-radius: 10px;
+   
  }
- .img-card{
-   width: 200px;
-   height: 214px;
-   cursor: pointer;
-   margin: 10px;
-   box-shadow: 5px 5px 10px var(--purple-grey);
-   border-radius: 10px; 
- }
+
 .logo-rss{
 width: 120px;
 height: 50px;
@@ -147,7 +142,9 @@ footer{
 .footer-container{
    font-size: 20px;
 }
-
+img { 
+   width:100%;
+}
 a {
 font-size: 20px;
 }
