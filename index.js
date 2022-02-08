@@ -1,18 +1,23 @@
 
-  const url = "https://api.unsplash.com/photos/random?query=spring&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo"
-  const imgCard = document.querySelectorAll(".img-card")
+  const url = "https://api.unsplash.com/photos/random?query=spring&client_id=No7MKm_oO2eQLte1bRDe8U-iqpBeob1dCmwvyZyHCTs"
+  const image = document.querySelectorAll(".img-card")
+  
   async function getData() {
     try{
       const response = await fetch(url)
       const data = await response.json()
       console.log(data)
-      imgCard.scr = data.file
-    }catch(error){
+      image .scr = data.file
+    } catch(error) {
       console.log(error)
     }       
   }
   getData()
 
+  // imgCard.addEventListener('click', () => {
+  //   getData()
+  //  }
+  // )
 
 
   
