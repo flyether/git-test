@@ -7,7 +7,8 @@
       const response = await fetch(url)
       const data = await response.json()
       console.log(data)
-      image .scr = data.file
+      image.scr = data.urls.regular
+      block = data.urls.regular
     } catch(error) {
       console.log(error)
     }       
