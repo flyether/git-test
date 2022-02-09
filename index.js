@@ -1,14 +1,21 @@
-// const url = "https://api.unsplash.com/photos/random?query=spring&client_id=No7MKm_oO2eQLte1bRDe8U-iqpBeob1dCmwvyZyHCTs"
-const url = "https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=No7MKm_oO2eQLte1bRDe8U-iqpBeob1dCmwvyZyHCTs"
-  const section = document.querySelector('.section')
-  // var block = document.getElementById('img-API')
+
+  // const url = "https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=No7MKm_oO2eQLte1bRDe8U-iqpBeob1dCmwvyZyHCTs"
+  
   const loupe = document.querySelector('.search-btn')
-  const searchText = document.querySelector("input").value;
+
+
+ 
   
   async function getData() {
-      const response = await fetch(url)
-      const data = await response.json()
-      console.log(data)
+  const section = document.querySelector('.section')
+  var searchText = document.getElementById("input").value; 
+  if ( searchText == "") {
+    searchText =  'spring' }
+ 
+  var searchUrl =  "https://api.unsplash.com/search/photos?query=" + searchText + "&per_page=30&orientation=landscape&client_id=No7MKm_oO2eQLte1bRDe8U-iqpBeob1dCmwvyZyHCTs"
+   const response = await fetch(searchUrl)
+   const data = await response.json()
+   console.log(data)
       section.innerHTML =""
       for (let key in data.results) {
         let div = document.createElement('div');
@@ -16,10 +23,13 @@ const url = "https://api.unsplash.com/search/photos?query=spring&per_page=30&ori
         div.classList.add('img-search-API')
         div.style.backgroundImage = `url("${data.results[key].urls.small}")`
       }
-        
-      
-            
+       
   }
   getData()
 
-  
+  loupe.addEventListener('click', getData )     
+
+  var input = document.getElementById("input")
+  var placeholder = input.placeholder;
+  // input.addEventListener('keydown', getData )  
+  input.addEventListener('keydown', getData)
