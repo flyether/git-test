@@ -1,7 +1,7 @@
 
   // const url = "https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=No7MKm_oO2eQLte1bRDe8U-iqpBeob1dCmwvyZyHCTs"
   
-  const loupe = document.querySelector('.search-btn')
+  const formSubmit = document.querySelector('.form')
 
 
  
@@ -27,8 +27,11 @@
   }
   getData()
 
-  loupe.addEventListener('click', getData )     
+  formSubmit.addEventListener('submit',() =>{
+    getData()
+    return false})
 
 
     
-  
+    // const loupe = document.querySelector('.button')
+    // loupe.addEventListener('click', getData )     

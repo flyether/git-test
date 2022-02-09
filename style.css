@@ -94,6 +94,7 @@ header{
    top: 7px;
    right:10px;
    position: absolute;
+   line-height: 1;
    font-size: 40px;
    color: var(--tourmaline);
  }
