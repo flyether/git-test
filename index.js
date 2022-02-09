@@ -27,9 +27,10 @@
   }
   getData()
 
-  formSubmit.addEventListener('submit',() =>{
+  formSubmit.addEventListener('submit',(e) =>{
     getData()
-    return false})
+    e.preventDefault()
+    })
 
 
     
