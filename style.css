@@ -57,15 +57,17 @@ main {
    display:flex;
    flex-direction:column;
    min-height:100%;
+   justify-content: center;
 }
 header{
    width: 100%;
    display:flex;
+   padding: 2%;
 }
 .text-title{
   text-align: start;
   font-family: 'Inter';
-  margin-top: 15px;
+ 
 }
 .strip{
    width: 100%;
@@ -78,17 +80,21 @@ header{
    height: 50px;
    fill: var(--green-stipe);
    transition: 0.25s;
-   margin: 10px 5% 10px 20px;
+   margin-right: 2% ;
  }
  .header-logo:hover{
   fill: var(--hover-rose);
  }
  .search-box {
-   margin: 10px 5% 10px auto;
+   margin: 0px 0 0 auto;
    width: 25%;
 
  }
- 
+ .section{
+ display: flex;
+flex-direction: row;
+flex-wrap:wrap;
+ }
  .search-box input {
    background-color: var(--green-stipe);
    font-size: 1.5rem;
@@ -151,6 +157,20 @@ font-size: 20px;
 .logo-rss{
    width: 80px;
    height: 40px;
+}
+.text-title{
+   font-size: 20px;
+   
+}
+.search-box {
+   margin: 3px 1% 3px auto;
+   width: 30%;
+
+ }
+.header-logo{
+   width: 30px;
+   height: 30px;
+
 }
 
 }
