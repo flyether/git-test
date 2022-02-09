@@ -88,7 +88,6 @@ header{
  .search-box {
    margin: 0px 0 0 auto;
    position: relative;
-
  }
  
  .search-box input {
@@ -175,9 +174,14 @@ font-size: 20px;
    font-size: 20px;
    
 }
+
+#input{
+   padding-right: 20px;
+   font-size: 1rem;
+    }
 .search-box {
    margin: 3px 1% 3px auto;
-   width: 30%;
+   
 
  }
 .header-logo{
