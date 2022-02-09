@@ -92,11 +92,14 @@ header{
  }
  .section{
  display: flex;
-flex-direction: row;
-flex-wrap:wrap;
-justify-content: center;
+ flex-direction: row;
+ flex-wrap:wrap;
+ justify-content: center;
  }
  .search-box input {
+   position: absolute;
+   top: 20px;
+   left: 70%;
    background-color: var(--green-stipe);
    font-size: 1.5rem;
    padding: 12px 12px;
@@ -104,11 +107,20 @@ justify-content: center;
    transition: all 0.30s ease-in-out;
    border: 1px solid var(--green-stipe);
  }
+ #input{
+padding-left: 50px;
+ }
  .search-btn{
-    color: rgb(218, 33, 33);
+   top: 25px;
+   left: 92%;
+   position: absolute;
+   
  }
  
-
+ .search-btn::before{
+   color: rgb(206, 34, 34);
+   
+ }
  .img-search-API{
    background-size: cover;
    width: 380px;
