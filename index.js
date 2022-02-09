@@ -29,7 +29,6 @@
 
   loupe.addEventListener('click', getData )     
 
-  var input = document.getElementById("input")
-  var placeholder = input.placeholder;
-  // input.addEventListener('keydown', getData )  
-  input.addEventListener('keydown', getData)
+
+    
+  
