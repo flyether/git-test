@@ -103,8 +103,8 @@
    
 }
 #modal-window{
-   width: 200px;
-   height: 200px;
+   width: 400px;
+   height: 300px;
    border:solid  #9b8069;
    background-color: var(--green-stipe);
    position: absolute;
@@ -117,17 +117,14 @@
    align-items: center;
    color: #116466;
    font-weight:bold ;
-   font-size: 20px;
-   padding: 20px 10px;
+   font-size: 30px;
+   padding: 40px 10px;
 }
-   #content{
-
-   }
    
 
    #btn-close{
-      width: 150px;
-      height: 30px;
+      width: 250px;
+      height: 50px;
       border:solid #9b8069;
       border-radius: 5px;
       background-color: #d9b08c;
@@ -205,6 +202,31 @@
  a {
  font-size: 20px;
  }
+ #modal-window{
+   width: 250px;
+   height: 300px;
+   border:solid  #9b8069;
+   background-color: var(--green-stipe);
+   position: absolute;
+   top:30% ;
+   left:50% ;
+   transform: translate(-50%, 50%) ;
+   display:flex ;
+   flex-flow: column;
+   justify-content: space-between ;
+   align-items: center;
+   color: #116466;
+   font-weight:bold ;
+   font-size: 20px;
+   padding: 40px 10px;
+}
+   
+
+   #btn-close{
+      width: 180px;
+      height: 30px;
+          
+   }
  .logo-rss{
     width: 80px;
     height: 40px;
