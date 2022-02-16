@@ -9,41 +9,11 @@ let arrAreaData = document.querySelectorAll("[data-num]") // массив для
 let arr = [null, null, null, null, null, null, null, null, null] // массив дл расчетов
 modalResultWrapper.style.display = 'none'  // прячем модальное окно
 let step = 0;
-// let stat = {
-// 	'x': 0,
-// 	'o': 0,
-// 	'd': 0,
-// }
-
-
 
 // конкат будет конкатинировать строки . Эта функция показывает в случаях когда две ячейки заполнены иксом или нулем индекс какой ячейки пустой. Чтобы боту было понятно куда ставить свой ноль
 function concat(a, b, c) {
   var result = arr[a] + arr[b] + arr[c] 
-  if ( result === "OOO"){
-	for (i=0; i< arr.length; i++) {
-		if (arr[i] == null){
-			step  = step + 1
-		}
-	}
-	step = 9 -step
-	let statO = 1
-	
-	localStorage.setItem('StatO', (Number(statO) + Number(localStorage.getItem("StatO"))))
-    marmaduck(`Bot Kirril got you. Number of steps ${step}`)
-	}
-  else if (result === "XXX"){
-	for (i=0; i< arr.length; i++) {   // починить вне цикла
-		if (arr[i] == null){
-			step  =9 -1
-		}
-	}
-	let statX = Number(localStorage.getItem("StatX"))
- statX = statX +1
-	
-	localStorage.setItem('StatX', statX)
-   marmaduck(`You are a winner!!! Number of steps ${step}`)
-  return result}
+  if ( result === "OOO" || result === "XXX"){return result}
 	
 	  // случаи когда result будет показывать где еть пустое место, которое нужно занять боту
   switch (result){
@@ -62,19 +32,86 @@ function concat(a, b, c) {
   }
 }
 
+function stepN(){
+	for (i=0; i< arr.length; i++) {
+		if (arr[i] == null){
+			step  = step + 1
+		}
+	}
+	step = 9 -step
+}
+
 function checkWin(){
   if (gameOver === true){return}  
 	for (var i = 0; i < 3; i++){
-		 result = concat(i, i + 3, i + 6) // ячейки в столбце
-	}
+		 result = concat(i, i + 3, i + 6) 
+		 if ( result === "OOO" ){
+			stepN()
+			let statO = Number(localStorage.getItem("StatO"))
+           statO = statO +1
+	   	localStorage.setItem('StatO', statO)
+			 marmaduck(`Bot Kirril got you. Number of steps ${step}`)
+			}// ячейки в столбце
 	
+	 if (result === "XXX") {
+		 		stepN()
+			let statX = Number(localStorage.getItem("StatX")) +1
+	   	localStorage.setItem('StatX', statX)
+			marmaduck(`You are a winner!!! Number of steps ${step}`)
+		}
+	}
 	for (var i = 0; i <= 6; i +=3){
-		result = concat(i, i + 1, i + 2) // ячейки в строке
+		result = concat(i, i + 1, i + 2) 
+		if ( result === "OOO"  ){
+			stepN()
+			let statO = Number(localStorage.getItem("StatO"))
+           statO = statO +1
+	   	localStorage.setItem('StatO', statO)
+			 marmaduck(`Bot Kirril got you. Number of steps ${step}`)
+		  }// ячейки в строке
+
+		  if (result === "XXX") {
+			stepN()
+	  let statX = Number(localStorage.getItem("StatX")) +1
+	  localStorage.setItem('StatX', statX)
+	  marmaduck(`You are a winner!!! Number of steps ${step}`)
+  }
 	}
 	// диогонали
 	result = concat(0, 4, 8)
+	
+		if ( result === "OOO"  ){
+			stepN()
+			let statO = Number(localStorage.getItem("StatO"))
+           statO = statO +1
+	   	localStorage.setItem('StatO', statO)
+			 marmaduck(`Bot Kirril got you. Number of steps ${step}`)
+		  }
+	
+		  if (result === "XXX") {
+			stepN()
+	  let statX = Number(localStorage.getItem("StatX")) +1
+	  localStorage.setItem('StatX', statX)
+	  marmaduck(`You are a winner!!! Number of steps ${step}`)
+  }
+
+
 	result = concat(2, 4, 6)
+	if ( result === "OOO" ){
+		stepN()
+			let statO = Number(localStorage.getItem("StatO"))
+           statO = statO +1
+	   	localStorage.setItem('StatO', statO)
+			 marmaduck(`Bot Kirril got you. Number of steps ${step}`)
+	  }
+	  if (result === "XXX") {
+		stepN()
+  let statX = Number(localStorage.getItem("StatX")) +1
+  localStorage.setItem('StatX', statX)
+  marmaduck(`You are a winner!!! Number of steps ${step}`)
+}
 	}
+	
 
 // бот который будет растовлять нолики из логики если в ряду или столбце есть 2 крестика надо в пустое ноль
 // будет как функция чеквин, но проверять комбинации из 2х 
@@ -205,7 +242,7 @@ function sound() {
 const marmaduck = winner => {
   contentWrapper.innerHTML = winner
   modalResultWrapper.style.display = 'block'
-
+  gameOver  = true
 }
 const closeModal = () => {
   modalResultWrapper.style.display = 'none'
@@ -213,8 +250,7 @@ const closeModal = () => {
   
 }
   
-	
-		document.getElementById('sX').innerHTML =  localStorage.getItem("StatX");
+			document.getElementById('sX').innerHTML =  localStorage.getItem("StatX");
 		
 		document.getElementById('sO').innerHTML =  localStorage.getItem("StatO");
 		 
