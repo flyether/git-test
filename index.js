@@ -4,36 +4,36 @@ const modalResultWrapper = document.getElementById('modal-result-wrapper')
 const btnClose = document.getElementById('btn-close')
 const overlay = document.getElementById('overlay')
 const contentWrapper = document.getElementById('content')
-
 let gameOver = false
 let arrAreaData = document.querySelectorAll("[data-num]") // массив для отрисовки физичесикх крестиков ноликов
 let arr = [null, null, null, null, null, null, null, null, null] // массив дл расчетов
 modalResultWrapper.style.display = 'none'  // прячем модальное окно
 let step = 0;
-let stat = {
-	'x': 0,
-	'o': 0,
-	'd': 0,
-}
-
-
+// let stat = {
+// 	'x': 0,
+// 	'o': 0,
+// 	'd': 0,
+// }
 
 
 // конкат будет конкатинировать строки . Эта функция показывает в случаях когда две ячейки заполнены иксом или нулем индекс какой ячейки пустой. Чтобы боту было понятно куда ставить свой ноль
 function concat(a, b, c) {
   var result = arr[a] + arr[b] + arr[c] 
-  if (result === "XXX"){
-	  stat.x += 1
-	  localStorage.setItem('StatX', (Number(stat.x) + Number(localStorage.getItem("StatX"))))
-    marmaduck(`You are a winner!!! Number of steps ${step}`) }
-  else if ( result === "OOO"){
-	stat.o += 1
-	localStorage.setItem('StatO', (Number(stat.o) + Number(localStorage.getItem("StatO"))))
+  if ( result === "OOO"){
+	let statO = 1
+	
+	localStorage.setItem('StatO', (Number(statO) + Number(localStorage.getItem("StatO"))))
     marmaduck(`Bot Kirril got you. Number of steps ${step}`)
 	}
- 
+  else if (result === "XXX"){
+	let statX = Number(localStorage.getItem("StatX"))
+ statX = statX + 1
+	console.log(statX)
+	console.log(localStorage.getItem("StatX"))
+	localStorage.setItem('StatX', statX)
+   marmaduck(`You are a winner!!! Number of steps ${step}`) }
 	
-  // случаи когда result будет показывать где еть пустое место, которое нужно занять боту
+	  // случаи когда result будет показывать где еть пустое место, которое нужно занять боту
   switch (result){
 		case "XXnull":
 			return ["X", c]		
@@ -81,22 +81,20 @@ function botZero(){
 	
 	for (let i = 0; i <= 6; i +=3){
 		let result = concat(i, i + 1, i + 2)
-		
+	
 		if (typeof(result) === "object" && result[0] === "O"){
 			arrAreaData[result[1]].innerHTML = "O"
 			arr[result[1]] = "O"
 			return
 		}
 	}
-	
-	result = concat(0, 4, 8)
+		result = concat(0, 4, 8)
 	if (typeof(result) === "object" && result[0] === "O"){
 		arrAreaData[result[1]].innerHTML = "O"
 		arr[result[1]] = "O"
 		return
 	}
-	
-	result = concat(2, 4, 6)
+		result = concat(2, 4, 6)
 	if (typeof(result) === "object" && result[0] === "O"){
 		arrAreaData[result[1]].innerHTML = "O"
 		arr[result[1]] = "O"
@@ -148,12 +146,10 @@ function botZero(){
 	}
 	
 	var randIndexTempArr = Math.floor(Math.random() * tempArr.length)  // рандом от 0 до одного. умнажаем на длинну массива с пустыми ячейками и округляем
-	console.log(randIndexTempArr)
 	var randNull = tempArr[randIndexTempArr]
-	console.log(randIndexTempArr)
-  if (randNull == undefined) {
-	  stat.d += 1
-	  localStorage.setItem('StatD', (Number(stat.d) + Number(localStorage.getItem("StatD"))))
+	  if (randNull == undefined) {
+	  let statD = 1
+	  localStorage.setItem('StatD', (Number(statD) + Number(localStorage.getItem("StatD"))))
 	 marmaduck("Draw...")}
 	arrAreaData[randNull].innerHTML = "O" // присваиваем физический ноль на поле фrrData
 	arr[randNull] = "O"	 // запишем значение в массив для расчетов
@@ -209,15 +205,23 @@ const closeModal = () => {
   location.reload()
   
 }
-   
+  
 	
 		document.getElementById('sX').innerHTML =  localStorage.getItem("StatX");
 		
 		document.getElementById('sO').innerHTML =  localStorage.getItem("StatO");
 		 
 		document.getElementById('sD').innerHTML = localStorage.getItem("StatD");
-	
-	
+		let stekO = localStorage.getItem("StatO");
+		let stekD = localStorage.getItem("StatD");
+		let stekX = localStorage.getItem("StatX");
+		
+	 if (   (Number(stekO) + Number(stekD) + Number(stekX)) > 10 ){
+		localStorage.removeItem("StatO")
+		localStorage.removeItem("StatD")
+		localStorage.removeItem("StatX")
+	 }
+
 
 overlay.addEventListener('click', closeModal)
 btnClose.addEventListener('click', closeModal)
