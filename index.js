@@ -16,22 +16,34 @@ let step = 0;
 // }
 
 
+
 // конкат будет конкатинировать строки . Эта функция показывает в случаях когда две ячейки заполнены иксом или нулем индекс какой ячейки пустой. Чтобы боту было понятно куда ставить свой ноль
 function concat(a, b, c) {
   var result = arr[a] + arr[b] + arr[c] 
   if ( result === "OOO"){
+	for (i=0; i< arr.length; i++) {
+		if (arr[i] == null){
+			step  = step + 1
+		}
+	}
+	step = 9 -step
 	let statO = 1
 	
 	localStorage.setItem('StatO', (Number(statO) + Number(localStorage.getItem("StatO"))))
     marmaduck(`Bot Kirril got you. Number of steps ${step}`)
 	}
   else if (result === "XXX"){
+	for (i=0; i< arr.length; i++) {   // починить вне цикла
+		if (arr[i] == null){
+			step  =9 -1
+		}
+	}
 	let statX = Number(localStorage.getItem("StatX"))
- statX = statX + 1
-	console.log(statX)
-	console.log(localStorage.getItem("StatX"))
+ statX = statX +1
+	
 	localStorage.setItem('StatX', statX)
-   marmaduck(`You are a winner!!! Number of steps ${step}`) }
+   marmaduck(`You are a winner!!! Number of steps ${step}`)
+  return result}
 	
 	  // случаи когда result будет показывать где еть пустое место, которое нужно занять боту
   switch (result){
@@ -53,13 +65,13 @@ function concat(a, b, c) {
 function checkWin(){
   if (gameOver === true){return}  
 	for (var i = 0; i < 3; i++){
-		var result = concat(i, i + 3, i + 6) // ячейки в столбце
+		 result = concat(i, i + 3, i + 6) // ячейки в столбце
 	}
 	
 	for (var i = 0; i <= 6; i +=3){
-		var result = concat(i, i + 1, i + 2) // ячейки в строке
+		result = concat(i, i + 1, i + 2) // ячейки в строке
 	}
-	// диоганали
+	// диогонали
 	result = concat(0, 4, 8)
 	result = concat(2, 4, 6)
 	}
@@ -180,12 +192,7 @@ addEventListener("click", function(event){
 	checkWin()
 })
 
-for (i=0; i< arr.length; i++) {
-	if (arr[i] == null){
-		step ++
-	}
-	step = 9 - step
-}
+
 
 function sound() {
   var audio = new Audio(); // Создаём новый элемент Audio
