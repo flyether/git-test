@@ -9,16 +9,30 @@ let gameOver = false
 let arrAreaData = document.querySelectorAll("[data-num]") // массив для отрисовки физичесикх крестиков ноликов
 let arr = [null, null, null, null, null, null, null, null, null] // массив дл расчетов
 modalResultWrapper.style.display = 'none'  // прячем модальное окно
+let step = 0;
+let stat = {
+	'x': 0,
+	'o': 0,
+	'd': 0,
+}
+
+
+
 
 // конкат будет конкатинировать строки . Эта функция показывает в случаях когда две ячейки заполнены иксом или нулем индекс какой ячейки пустой. Чтобы боту было понятно куда ставить свой ноль
 function concat(a, b, c) {
   var result = arr[a] + arr[b] + arr[c] 
   if (result === "XXX"){
-    marmaduck("You are a winner!!!") }
+	  stat.x += 1
+	  localStorage.setItem('StatX', (Number(stat.x) + Number(localStorage.getItem("StatX"))))
+    marmaduck(`You are a winner!!! Number of steps ${step}`) }
   else if ( result === "OOO"){
-    marmaduck("Bot got you")
-		
+	stat.o += 1
+	localStorage.setItem('StatO', (Number(stat.o) + Number(localStorage.getItem("StatO"))))
+    marmaduck(`Bot Kirril got you. Number of steps ${step}`)
 	}
+ 
+	
   // случаи когда result будет показывать где еть пустое место, которое нужно занять боту
   switch (result){
 		case "XXnull":
@@ -137,7 +151,10 @@ function botZero(){
 	console.log(randIndexTempArr)
 	var randNull = tempArr[randIndexTempArr]
 	console.log(randIndexTempArr)
-  if (randNull == undefined) { marmaduck("Draw...")}
+  if (randNull == undefined) {
+	  stat.d += 1
+	  localStorage.setItem('StatD', (Number(stat.d) + Number(localStorage.getItem("StatD"))))
+	 marmaduck("Draw...")}
 	arrAreaData[randNull].innerHTML = "O" // присваиваем физический ноль на поле фrrData
 	arr[randNull] = "O"	 // запишем значение в массив для расчетов
 }
@@ -167,7 +184,12 @@ addEventListener("click", function(event){
 	checkWin()
 })
 
-
+for (i=0; i< arr.length; i++) {
+	if (arr[i] == null){
+		step ++
+	}
+	step = 9 - step
+}
 
 function sound() {
   var audio = new Audio(); // Создаём новый элемент Audio
@@ -180,11 +202,22 @@ function sound() {
 const marmaduck = winner => {
   contentWrapper.innerHTML = winner
   modalResultWrapper.style.display = 'block'
+
 }
 const closeModal = () => {
   modalResultWrapper.style.display = 'none'
   location.reload()
+  
 }
-    
+   
+	
+		document.getElementById('sX').innerHTML =  localStorage.getItem("StatX");
+		
+		document.getElementById('sO').innerHTML =  localStorage.getItem("StatO");
+		 
+		document.getElementById('sD').innerHTML = localStorage.getItem("StatD");
+	
+	
+
 overlay.addEventListener('click', closeModal)
 btnClose.addEventListener('click', closeModal)
