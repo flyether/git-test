@@ -204,24 +204,10 @@
  }
  #modal-window{
    width: 250px;
-   height: 300px;
-   border:solid  #9b8069;
-   background-color: var(--green-stipe);
-   position: absolute;
-   top:30% ;
-   left:50% ;
-   transform: translate(-50%, 50%) ;
-   display:flex ;
-   flex-flow: column;
-   justify-content: space-between ;
-   align-items: center;
-   color: #116466;
-   font-weight:bold ;
-   font-size: 20px;
-   padding: 40px 10px;
+   top:10% ;
+   
 }
    
-
    #btn-close{
       width: 180px;
       height: 30px;
