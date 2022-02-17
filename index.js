@@ -10,6 +10,23 @@ let arr = [null, null, null, null, null, null, null, null, null] // массив
 modalResultWrapper.style.display = 'none'  // прячем модальное окно
 let step = 0;
 
+
+function StorageChangeNull(stat){if( localStorage.getItem(stat) === null){localStorage.setItem(stat, 0)}}
+StorageChangeNull("StatX")
+StorageChangeNull("StatO")
+StorageChangeNull("StatD")
+
+StorageChangeNull("pre-StatX")
+StorageChangeNull("pre-StatO") 
+StorageChangeNull("pre-StatD") 
+
+StorageChangeNull("pre-pre-StatX")
+StorageChangeNull("pre-pre-StatO")
+StorageChangeNull("pre-pre-StatD")
+
+
+ 
+
 // конкат будет конкатинировать строки . Эта функция показывает в случаях когда две ячейки заполнены иксом или нулем индекс какой ячейки пустой. Чтобы боту было понятно куда ставить свой ноль
 function concat(a, b, c) {
   var result = arr[a] + arr[b] + arr[c] 
@@ -41,78 +58,62 @@ function stepN(){
 	step = 9 -step
 }
 
+function winnerX() {
+	stepN()
+	let statX = Number(localStorage.getItem("StatX")) +1
+	localStorage.setItem('StatX', statX)
+	marmaduck(`You are a winner!!! Number of steps ${step}`)
+}
+
+function winnerO() {
+	stepN()
+	let statO = Number(localStorage.getItem("StatO"))
+   statO = statO +1
+	localStorage.setItem('StatO', statO)
+	marmaduck(`Bot Kirril got you. Number of steps ${step}`)
+}
+
+
 function checkWin(){
   if (gameOver === true){return}  
 	for (var i = 0; i < 3; i++){
 		 result = concat(i, i + 3, i + 6) 
 		 if ( result === "OOO" ){
-			stepN()
-			let statO = Number(localStorage.getItem("StatO"))
-           statO = statO +1
-	   	localStorage.setItem('StatO', statO)
-			 marmaduck(`Bot Kirril got you. Number of steps ${step}`)
-			}// ячейки в столбце
+			winnerO()
+		}// ячейки в столбце
 	
-	 if (result === "XXX") {
-		 		stepN()
-			let statX = Number(localStorage.getItem("StatX")) +1
-	   	localStorage.setItem('StatX', statX)
-			marmaduck(`You are a winner!!! Number of steps ${step}`)
+	   if (result === "XXX") {
+		winnerX()
 		}
 	}
 	for (var i = 0; i <= 6; i +=3){
 		result = concat(i, i + 1, i + 2) 
 		if ( result === "OOO"  ){
-			stepN()
-			let statO = Number(localStorage.getItem("StatO"))
-           statO = statO +1
-	   	localStorage.setItem('StatO', statO)
-			 marmaduck(`Bot Kirril got you. Number of steps ${step}`)
-		  }// ячейки в строке
+			winnerO()
+		}// ячейки в строке
 
-		  if (result === "XXX") {
-			stepN()
-	  let statX = Number(localStorage.getItem("StatX")) +1
-	  localStorage.setItem('StatX', statX)
-	  marmaduck(`You are a winner!!! Number of steps ${step}`)
-  }
+		if (result === "XXX") {
+			winnerX()
+     }
 	}
 	// диогонали
 	result = concat(0, 4, 8)
-	
-		if ( result === "OOO"  ){
-			stepN()
-			let statO = Number(localStorage.getItem("StatO"))
-           statO = statO +1
-	   	localStorage.setItem('StatO', statO)
-			 marmaduck(`Bot Kirril got you. Number of steps ${step}`)
-		  }
-	
-		  if (result === "XXX") {
-			stepN()
-	  let statX = Number(localStorage.getItem("StatX")) +1
-	  localStorage.setItem('StatX', statX)
-	  marmaduck(`You are a winner!!! Number of steps ${step}`)
-  }
-
+	if ( result === "OOO"  ){
+		winnerO()
+	}
+	if (result === "XXX") {
+		winnerX()
+   }
 
 	result = concat(2, 4, 6)
 	if ( result === "OOO" ){
-		stepN()
-			let statO = Number(localStorage.getItem("StatO"))
-           statO = statO +1
-	   	localStorage.setItem('StatO', statO)
-			 marmaduck(`Bot Kirril got you. Number of steps ${step}`)
-	  }
-	  if (result === "XXX") {
-		stepN()
-  let statX = Number(localStorage.getItem("StatX")) +1
-  localStorage.setItem('StatX', statX)
-  marmaduck(`You are a winner!!! Number of steps ${step}`)
-}
+		winnerO()
 	}
+	if (result === "XXX") {
+	winnerX()
+   }
+}
 	
-
 // бот который будет растовлять нолики из логики если в ряду или столбце есть 2 крестика надо в пустое ноль
 // будет как функция чеквин, но проверять комбинации из 2х 
 
@@ -213,9 +214,7 @@ addEventListener("click", function(event){
 		event.target.innerHTML = "X" // тут можно картинку и звук
 		sound()
 		arr[event.target.dataset.num] = "X"
-		
-		//console.log (arr)
-		
+				
 	}else{
 		return
 	}  // чтобы ноль рисовался после икса
@@ -229,19 +228,21 @@ addEventListener("click", function(event){
 	checkWin()
 })
 
-
-
 function sound() {
   var audio = new Audio(); // Создаём новый элемент Audio
   audio.src = "./assets/sound/inecraft_hit_sound.mp3"; 
   audio.autoplay = true; // Автоматически запускаем
 }
-
-
+function soundGameOver() {
+	let audio2 = new Audio(); // Создаём новый элемент Audio
+	audio2.src = "./assets/sound/gameover.mp3"; 
+	audio2.autoplay = true; // Автоматически запускаем
+ }
 // модальное окно появляется на выиграшах и проигрышах с ничьей
 const marmaduck = winner => {
   contentWrapper.innerHTML = winner
   modalResultWrapper.style.display = 'block'
+  soundGameOver() 
   gameOver  = true
 }
 const closeModal = () => {
@@ -249,22 +250,51 @@ const closeModal = () => {
   location.reload()
   
 }
-  
-			document.getElementById('sX').innerHTML =  localStorage.getItem("StatX");
+//   статистика
+let stekO = localStorage.getItem("StatO");
+let stekD = localStorage.getItem("StatD");
+let stekX = localStorage.getItem("StatX");
+	
+document.getElementById('sX').innerHTML =  stekX
+document.getElementById('sO').innerHTML =  stekO
+document.getElementById('sD').innerHTML =  stekD
 		
-		document.getElementById('sO').innerHTML =  localStorage.getItem("StatO");
-		 
-		document.getElementById('sD').innerHTML = localStorage.getItem("StatD");
-		let stekO = localStorage.getItem("StatO");
-		let stekD = localStorage.getItem("StatD");
-		let stekX = localStorage.getItem("StatX");
-		
-	 if (   (Number(stekO) + Number(stekD) + Number(stekX)) > 10 ){
-		localStorage.removeItem("StatO")
-		localStorage.removeItem("StatD")
-		localStorage.removeItem("StatX")
-	 }
+let preStekX  = localStorage.getItem("StatX")
+let preStekO  = localStorage.getItem("StatO")
+let preStekD  = localStorage.getItem("StatD")
 
+let prePreStekX  = localStorage.getItem("pre-StatX")
+let prePreStekO  = localStorage.getItem("pre-StatO")
+let prePreStekD  = localStorage.getItem("pre-StatD")
+
+		
+if ( (Number(stekO) + Number(stekD) + Number(stekX)) >= 10 ){
+      
+		localStorage.setItem('pre-StatX', preStekX )
+      localStorage.setItem('pre-StatO', preStekO )
+      localStorage.setItem('pre-StatD', preStekD )
+      document.getElementById('pre-sX').innerHTML =  preStekX
+		document.getElementById('pre-sO').innerHTML =  preStekO
+		document.getElementById('pre-sD').innerHTML =  preStekD
+
+		localStorage.setItem('pre-pre-StatX', prePreStekX )
+      localStorage.setItem('pre-pre-StatO', prePreStekO )
+      localStorage.setItem('pre-pre-StatD', prePreStekD )
+      document.getElementById('sX20').innerHTML =  prePreStekX
+		document.getElementById('sO20').innerHTML =  prePreStekO
+		document.getElementById('sD20').innerHTML =  prePreStekD 
+  		
+		localStorage.setItem("StatO", "0")
+		localStorage.setItem("StatD", "0")
+		localStorage.setItem("StatX", "0")
+}
+	
+	 document.getElementById('pre-sX').innerHTML =  prePreStekX
+	 document.getElementById('pre-sO').innerHTML =  prePreStekO
+	 document.getElementById('pre-sD').innerHTML =  prePreStekD 
+	 document.getElementById('sX20').innerHTML =  localStorage.getItem("pre-pre-StatX")
+	 document.getElementById('sO20').innerHTML =  localStorage.getItem("pre-pre-StatO")
+	 document.getElementById('sD20').innerHTML =  localStorage.getItem("pre-pre-StatD")
 
 overlay.addEventListener('click', closeModal)
 btnClose.addEventListener('click', closeModal)

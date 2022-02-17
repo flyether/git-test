@@ -137,7 +137,7 @@
 .area{
    width: 600px;
    height: 600px;
-   margin: 30px auto 10px;
+   margin: 30px auto 20px;
    background-color: var(--beige);
    display: flex;
    flex-wrap: wrap;
@@ -155,16 +155,23 @@
 }
  .stat {
  
-    font-size: 20px;
-    display: flex;
-    align-items: center;
+   font-size: 20px;
+   display: flex;
+   align-items: center;
  }
  .stat table{
+    
     border-collapse: collapse;
+    
+ }
+ .stat th{
+    width: 200px;
  }
  .stat table, .stat th,  .stat td{
-    border: solid #d9b08c;
-    padding: 0px 50px;
+   min-width: 25px;
+   border: solid #d9b08c;
+   padding: 1px;
+   text-align: center;
  }
  .logo-rss{
  width: 120px;
@@ -197,13 +204,19 @@
        
  @media (max-width: 768px) {
  .footer-container{
-    font-size: 20px;
+    font-size: 18px;
  }
  .area{
    width: 300px;
    height: 300px;
    margin: 30px auto;
+}
+.stat th{
+   width: 100px;
    
+}
+.stat {
+   font-size: 16px;
 }
 .box{
    width: 100px; 
