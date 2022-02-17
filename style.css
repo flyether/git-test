@@ -120,6 +120,7 @@
    font-weight:bold ;
    font-size: 30px;
    padding: 40px 10px;
+   text-align: center;
 }
    
 
@@ -130,7 +131,7 @@
       border-radius: 5px;
       background-color: #d9b08c;
       text-align: center;
-      line-height: 20px;
+      line-height: 35px;
       cursor: pointer;
       
    }
@@ -237,7 +238,7 @@
    #btn-close{
       width: 180px;
       height: 30px;
-          
+      line-height: 20px;
    }
  .logo-rss{
     width: 80px;
